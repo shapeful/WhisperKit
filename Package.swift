@@ -13,28 +13,16 @@ let package = Package(
         .library(
             name: "WhisperKit",
             targets: ["WhisperKit"]
-        ),
-        .executable(
-            name: "whisperkit-cli",
-            targets: ["WhisperKitCLI"]
-        ),
+        ), 
     ],
     dependencies: [
-        .package(url: "https://github.com/huggingface/swift-transformers.git", exact: "0.1.8"),
-        .package(url: "https://github.com/apple/swift-argument-parser.git", exact: "1.3.0"),
-    ],
+        .package(url: "https://github.com/huggingface/swift-transformers.git", exact: "0.1.8") 
+       ],
     targets: [
         .target(
             name: "WhisperKit",
             dependencies: [
                 .product(name: "Transformers", package: "swift-transformers"),
-            ]
-        ),
-        .executableTarget(
-            name: "WhisperKitCLI",
-            dependencies: [
-                "WhisperKit",
-                .product(name: "ArgumentParser", package: "swift-argument-parser"),
             ]
         ),
         .testTarget(
