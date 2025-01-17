@@ -1,4 +1,4 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -7,7 +7,7 @@ let package = Package(
     name: "whisperkit",
     platforms: [
         .iOS(.v16),
-        .macOS(.v13),
+        .macOS(.v14),
     ],
     products: [
         .library(
@@ -16,7 +16,7 @@ let package = Package(
         ), 
     ],
     dependencies: [
-        .package(url: "https://github.com/huggingface/swift-transformers.git", from: "0.1.8") 
+        .package(url: "https://github.com/huggingface/swift-transformers.git", from: "0.1.14")
        ],
     targets: [
         .target(

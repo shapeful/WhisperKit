@@ -1317,6 +1317,10 @@ struct WhisperTokenizerWrapper: WhisperTokenizer {
 }
 
 extension WhisperTokenizerWrapper: Tokenizer {
+    func encode(text: String, addSpecialTokens: Bool) -> [Int] {
+        tokenizer.encode(text: text)
+    }
+    
     func tokenize(text: String) -> [String] {
         tokenizer.tokenize(text: text)
     }
