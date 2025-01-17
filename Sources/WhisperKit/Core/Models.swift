@@ -1361,23 +1361,23 @@ extension WhisperTokenizerWrapper: Tokenizer {
         tokenizer.unknownTokenId
     }
 
-    enum TonizedError: Error {
+    enum TokenizedError: Error {
         case notImplemented
     }
     /// The appropriate chat template is selected from the tokenizer config
     func applyChatTemplate(messages: [[String: String]]) throws -> [Int]
 {
-        throw  notImplemented
+        throw TokenizedError.notImplemented
     }
     /// The chat template is provided as a string literal or specified by name
     func applyChatTemplate(messages: [[String: String]], chatTemplate: ChatTemplateArgument) throws -> [Int]
 {
-        throw  notImplemented
+        throw TokenizedError.notImplemented
     }
     /// The chat template is provided as a string literal
     func applyChatTemplate(messages: [[String: String]], chatTemplate: String) throws -> [Int]
 {
-        throw  notImplemented
+        throw TokenizedError.notImplemented
     }
     func applyChatTemplate(
         messages: [[String: String]],
@@ -1388,7 +1388,7 @@ extension WhisperTokenizerWrapper: Tokenizer {
         maxLength: Int?,
         tools: [[String: Any]]?
     ) throws -> [Int] {
-        throw  notImplemented
+        throw TokenizedError.notImplemented
     }
 }
 
