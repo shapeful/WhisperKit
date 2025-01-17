@@ -1360,6 +1360,36 @@ extension WhisperTokenizerWrapper: Tokenizer {
     var unknownTokenId: Int? {
         tokenizer.unknownTokenId
     }
+
+    enum TonizedError: Error {
+        case notImplemented
+    }
+    /// The appropriate chat template is selected from the tokenizer config
+    func applyChatTemplate(messages: [[String: String]]) throws -> [Int]
+{
+        throw  notImplemented
+    }
+    /// The chat template is provided as a string literal or specified by name
+    func applyChatTemplate(messages: [[String: String]], chatTemplate: ChatTemplateArgument) throws -> [Int]
+{
+        throw  notImplemented
+    }
+    /// The chat template is provided as a string literal
+    func applyChatTemplate(messages: [[String: String]], chatTemplate: String) throws -> [Int]
+{
+        throw  notImplemented
+    }
+    func applyChatTemplate(
+        messages: [[String: String]],
+        /// A chat template can optionally be provided or specified by name when several templates are included in the tokenizer config. Normally this is not necessary.
+        chatTemplate: ChatTemplateArgument?,
+        addGenerationPrompt: Bool,
+        truncation: Bool,
+        maxLength: Int?,
+        tools: [[String: Any]]?
+    ) throws -> [Int] {
+        throw  notImplemented
+    }
 }
 
 extension WhisperTokenizerWrapper {
